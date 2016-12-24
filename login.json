@@ -1,0 +1,19 @@
+{
+	"users":[
+		{
+		"login":"ansar",
+		"password":"123",
+		"name":"Ansar"
+	},
+	{
+		"login":"user",
+		"password":"1234",
+		"name":"User"
+	},
+	{
+		"login":"qwerty",
+		"password":"asd",
+		"name":"Qwerty"
+	}
+]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet/less" type="text/css" href="template.less">
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="less.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <title>Deus Ex: Mankind Divided</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+  <div class="back" ng-click="reg_window=false;back=!back;log_window=false" ng-show="back"></div>
+<header>
+<div class="frame">
+  <a class="logo" href="http://localhost/final2/loged.html"><img src="ava.png" style="width: 150px; height: 50px">
+  </a>
+  <div class="text-logo">покупайте продавайте торгуйте</div>
+  <div class="reg-log">
+    <div class="cart">
+    <a href="#">Корзина</a>
+  </div>
+<!--     <div class="regist"><a href="#" ng-click="reg_on()">Регистрация</a></div> -->
+<!--     <div class="login"><a href="#" ng-click="log_on()">Войти</a></div> -->
+  </div>  
+</div>
+</header>
+<section class="main" style="width: 400px;">
+  <div class="main-holder" style="width: 400px;">
+    <div class="games-list" style="width: 400px;">
+    <h3>{{games[5].name}}</h3>
+    <div class="product-card">
+      <div class="thumbnail">
+        <img src="{{games[5].image}}">
+      </div>
+      <div class="buy">
+        <div class="price-buy">
+          <p>{{games[5].price}}</p>
+        </div>
+        <div class="click-buy">
+        <button>Купить</button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+  </body>
+</html>

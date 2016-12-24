@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet/less" type="text/css" href="template.less">
+    <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="less.min.js"></script>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <title>Game trader</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+  <div class="back" ng-click="basket_list=false;back=!back;"
+  ng-show="back"></div>
+  <div class="basket_list" ng-show="basket_list">
+  <div class="bought">
+  <div class="product_name"></div>
+  <div class="product_price"></div>
+  </div>
+  <button ng-click="basket_list=false;back=!back">Назад</button>  
+  </div>
+<header>
+<div class="frame">
+  <a class="logo" href="http://localhost/final2/loged.html"><img src="ava.png" style="width: 150px; height: 50px">
+  </a>
+  <div class="text-logo">покупайте продавайте торгуйте</div>
+  <div class="reg-log">
+  <div class="cart">
+    <a href="#" ng-click="cart_open()">Корзина</a>
+    <p>{{userlogin}}</p>
+  </div>
+<!--     <div class="regist"><a href="#" ng-click="reg_on()">Регистрация</a></div> -->
+<!--     <div class="login"><a href="#" ng-click="log_on()">Войти</a></div> -->
+  </div>  
+</div>
+</header>
+<div class="wrapper">
+  <div class="wrapper-down">
+    <div class="wrapper-center">
+      <div class="wrapper-in">
+        <div id="search">
+          <input type="search" name="search" placeholder="Поиск" ng-model="srch">
+        </div>
+        <div id="category">
+          <select class="category">
+            <option>Любая категория</option>
+            <option>Кооператив</option>
+            <option>Мультиплеер</option>
+          </select>
+        </div>
+        <div id="genre">
+          <select class="genre">
+            <option>Любой жанр</option>
+            <option>Экшены</option>
+            <option>Ролевые</option>
+            <option>Инди</option>
+            <option>Стратегии</option>
+          </select>
+        </div>
+        <div id="order">
+             <select class="order">
+            <option>По дате выхода</option>
+            <option>По цене</option>
+          </select>
+        </div>
+        <button type="submit" class="submit" ng-click="find()">Найти</button>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="main">
+  <div class="main-holder">
+    <div class="games-list">
+      <div class="list">
+          <div id="game" ng-repeat="x in games | filter: srch"><!-- {{x.name}} -->
+            <div class="visual">
+              <a href="{{x.url}}"><img src="{{x.image}}"></a>
+            </div>
+            <div class="info">
+              <div class="title">
+                <a href="{{x.url}}">{{x.name}}</a>
+              </div>
+              <div class="price-holder">
+                <span class="price">{{x.price}}</span>
+              </div>
+            </div>
+           </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </body>
+</html>
